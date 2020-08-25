@@ -133,10 +133,12 @@ class TransformersSequenceClassifier(AdaptiveModel):
                 predictions += preds
 
             for text, pred in zip(str_reordered_sentences, predictions):
+                print("pred", pred)
                 # Initialize and assign labels to each class in each datapoint prediction
                 text_sent = Sentence(text)
                 for k, v in id2label.items():
                     label = Label(value=v, score=pred[k])
+                    print("label", label)
                     text_sent.add_label(label)
                 results.append(text_sent)
 
