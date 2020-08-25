@@ -7,6 +7,10 @@ import adaptnlp
 import uvicorn
 from fastapi import FastAPI
 
+from .sequence_classification import EasySequenceClassifier
+
+print("modded")
+
 from .data_models import (
     TokenTaggingRequest,
     TokenTaggingResponse,
@@ -32,7 +36,7 @@ logging.basicConfig(
 
 # Global Modules
 _TOKEN_TAGGER = adaptnlp.EasyTokenTagger()
-_SEQUENCE_CLASSIFIER = adaptnlp.EasySequenceClassifier()
+_SEQUENCE_CLASSIFIER = EasySequenceClassifier()
 _QA_MODEL = adaptnlp.EasyQuestionAnswering()
 
 # Get Model Configurations From ENV VARS
