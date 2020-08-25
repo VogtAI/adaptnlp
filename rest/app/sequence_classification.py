@@ -135,7 +135,7 @@ class TransformersSequenceClassifier(AdaptiveModel):
             for text, pred in zip(str_reordered_sentences, predictions):
                 print("pred", pred)
                 # Initialize and assign labels to each class in each datapoint prediction
-                text_sent = Sentence(pred)
+                text_sent = Sentence(str(pred))
                 results.append(text_sent)
 
         # Order results back into original order
